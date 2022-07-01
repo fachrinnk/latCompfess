@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+typedef long long ll;
+typedef long long int lli;
+#define fast_io ios::sync_with_stdio(0), cin.tie(0), cout.tie(0)
+#define endl '\n'
+#define REP(i, a, b) for (int i = a; i < b; i++)
+#define EREP(i, a, b) for (int i = a; i <= b; i++)
+#define minv(v) *min_element(v.begin(),v.end())
+#define maxv(v) *max_element (v.begin(),v.end())
+using namespace std;
+bool Primecheck(int n)
+{
+    if(n == 1)
+        return false ;
+ 
+    for(int i = 2 ; i <= sqrt(n) ; i++)
+    {
+        if(n%i == 0)
+        {
+            return false ;
+        }
+    }
+    return true;
+}
+int reverseDigits(int num)
+{
+    int rev_num = 0;
+    while (num > 0) {
+        rev_num = rev_num * 10 + num % 10;
+        num = num / 10;
+    }
+    return rev_num;
+}
+int isPalindrome(int n)
+{
+    int rev_n = reverseDigits(n);
+    if (rev_n == n)
+        return 1;
+    else
+        return 0;
+}
+/*A recursive binary search function. It returns location of x in given array arr[l..r] is present, otherwise -1 */
+int binarySearch(int arr[] , int left , int right , int element)
+{
+    if(right >= 1)
+    {
+        int mid = left + (right - 1) / 2;
+        if(arr[mid] == element)
+            return mid;
+ 
+        if(arr[mid] > element)
+            return binarySearch(arr , left , mid - 1 , element);
+ 
+        return binarySearch(arr , mid + 1 , right , element);
+    }
+ 
+    return -1;
+}
