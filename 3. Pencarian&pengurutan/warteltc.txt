@@ -1,0 +1,16 @@
+7 8
+agung 572381
+ani 111111
+budi 222222
+dengklek 696969
+ganesh 987123
+gareng 234223
+hadi 429088
+agung
+ani
+budi
+den
+ganesh
+gareng
+hadi
+nyancoder
